@@ -66,7 +66,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 function onFinish () {
     if (recived == sellected) {
         images.iconImage(IconNames.Asleep).showImage(0)
-    } else if (sellected == 0 && recived == 2 || (sellected == 1 && recived == 0 || sellected == 2 && recived == 1)) {
+    } else if (winList[sellected] == recived) {
         images.iconImage(IconNames.Happy).showImage(0)
     } else {
         images.iconImage(IconNames.Sad).showImage(0)
@@ -83,5 +83,9 @@ function reset () {
 let sellected = 0
 let hasSend = 0
 let recived = 0
+let winList: number[] = []
 radio.setGroup(187)
+winList = [0, 2]
+winList = [1, 0]
+winList = [2, 1]
 reset()
