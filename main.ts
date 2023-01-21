@@ -9,7 +9,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     if (hasSend == 0) {
-        if (sellected >= 0) {
+        if (sellected > 0) {
             sellected += -1
         } else {
             sellected = 2
@@ -19,8 +19,8 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     if (hasSend == 0) {
-        hasSend += 1
         radio.sendNumber(sellected)
+        hasSend += 1
         if (recived != -1) {
             onFinish()
         }
@@ -55,7 +55,7 @@ function drawSymbol () {
 }
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     if (hasSend == 0) {
-        if (sellected <= 1) {
+        if (sellected < 2) {
             sellected += 1
         } else {
             sellected = 0
