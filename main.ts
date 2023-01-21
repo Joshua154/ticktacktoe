@@ -85,7 +85,5 @@ let hasSend = 0
 let recived = 0
 let winList: number[] = []
 radio.setGroup(187)
-winList = [0, 2]
-winList = [1, 0]
-winList = [2, 1]
+winList = [2, 0, 1]
 reset()
